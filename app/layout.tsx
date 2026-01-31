@@ -14,8 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${comicNeue.className} antialiased flex flex-row`}>
-        <div className="w-1000">{children}</div>
+      <body className={`${comicNeue.className} antialiased scrollbar-hidden`}>
+        <div className="w-1000 scrollbar-hidden">{children}</div>
         <MenuBar></MenuBar>
       </body>
     </html>
