@@ -45,7 +45,7 @@ export function MenuBar() {
           <Loading />
         ) : (
             <motion.nav
-              whileHover={{width: "170px", scale: 1.02}}
+              whileHover={{width: "150px", scale: 1.02}}
               className="z-100 scrollbar-hidden fixed top-0 right-0 flex flex-col items-end backdrop-blur-md justify-center shadow-lg rounded-l-[30px] bg-[black]/5 w-fit h-full transition-colors duration-1000 shadow-[inset_0_-4px_10px_-1px_rgba(255,255,255,0.1)]">
             <motion.a
               className="m-3 rounded-[20px] text-(--bgc) bg-(--text) p-3 text-sm text-center font-bold w-fit"
@@ -57,7 +57,7 @@ export function MenuBar() {
             </motion.a>
             <motion.a
               className="group w-auto h-auto m-5 p-3 rounded-[20px] text-(--bgc) bg-(--magenta) text-sm text-center flex flex-row items-center justify-center gap-2"
-              href="../"
+              href="../aboutMe"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95, rotate: -10 }}
               onHoverStart={()=>setHoveredIndex(0)}
@@ -73,7 +73,7 @@ export function MenuBar() {
             </motion.a>
             <motion.a
               className="group w-auto h-auto m-5 p-3 rounded-[20px] text-(--bgc) bg-(--blue) text-sm text-center flex flex-row items-center justify-center gap-2"
-              href="../"
+              href="../myProjects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95, rotate: -10 }}
               onHoverStart={()=>setHoveredIndex(1)}
@@ -88,7 +88,7 @@ export function MenuBar() {
             </motion.a>
             <motion.a
               className="group w-auto h-auto m-5 p-3 rounded-[20px] text-(--bgc) bg-(--acqua) text-sm text-center flex flex-row items-center justify-center gap-2"
-              href="../"
+              href="https://github.com/misterD05"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95, rotate: -10 }}
               onHoverStart={()=>setHoveredIndex(2)}
@@ -103,7 +103,7 @@ export function MenuBar() {
             </motion.a>
             <motion.a
               className="group w-auto h-auto m-5 p-3 rounded-[20px] text-(--bgc) bg-(--tangerine) text-sm text-center flex flex-row items-center justify-center gap-2"
-              href="../"
+              href="../contacts"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95, rotate: -10 }}
               onHoverStart={()=>setHoveredIndex(3)}
