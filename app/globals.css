@@ -7,17 +7,19 @@
   --blue: #2323a9ff;
   --bgc: #d9d5bfff;
   --text: #150F2F;
+  --mode: #A333FF;
 }
 
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root[data-theme="dark"] {
     --acqua: #78e3d1ff;
     --magenta: #cf3a7bff;
     --tangerine: #ebd494ff;
     --blue: #8888e7ff;
     --bgc: #262417;
     --text: #eeeeee;
+    --mode: #F7B538;
   }
 }
 
