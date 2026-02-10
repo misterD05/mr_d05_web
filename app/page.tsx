@@ -1,11 +1,43 @@
-import Image from "next/image";
+"use client"
+import { useRef } from "react";
+import { Container, ContainerHiddenRow, ContainerHiddenColumn } from "./widgets/components";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (!scrollRef.current) return;
+
+    e.preventDefault(); // blocca scroll verticale
+    scrollRef.current?.scrollBy({
+      left: e.deltaY,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="flex items-center w-auto h-auto justify-center bg-(--bgc) text-(--text)">
-      <main className="flex w-fit h-fit flex-row items-center justify-between">
-        TODO my website .... coming soon
-      </main>
-    </div>
+    <motion.div
+      ref={scrollRef}
+      onWheel={onWheel}
+      className="flex flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5  p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      <Container><h1>TODO my website .... coming soon</h1></Container>
+      <ContainerHiddenColumn>
+          <Container><h1>hellooo</h1></Container>
+          <Container><h1>hellooo</h1></Container>
+      </ContainerHiddenColumn>
+      <ContainerHiddenColumn>
+          <Container><h1>hellooo</h1></Container>
+          <Container><h1>hellooo</h1></Container>
+      </ContainerHiddenColumn>
+      <ContainerHiddenColumn>
+          <ContainerHiddenRow><Container><h1>hellooo</h1></Container><Container><h1>hellooo</h1></Container></ContainerHiddenRow>
+          <Container><h1>hellooo</h1></Container>
+      </ContainerHiddenColumn>
+      <ContainerHiddenColumn>
+          <Container><h1>hellooo</h1></Container>
+          <Container><h1>hellooo</h1></Container>
+      </ContainerHiddenColumn>
+    </motion.div>
   );
 }

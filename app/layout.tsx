@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${comicNeue.className} antialiased scrollbar-hidden`}>
-        <div className="w-full h-full">{children}</div>
+      <body className={`${comicNeue.className} antialiased scrollbar-hidden h-full w-full`}>
         <MenuBar></MenuBar>
+        <div className="w-auto h-auto z-0 flex">{children}</div>
       </body>
     </html>
   );

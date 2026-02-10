@@ -1,5 +1,8 @@
+"use client"
+import "../globals.css";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { div } from "framer-motion/client";
+import { ElementType, useEffect, useState } from "react";
 
 
 
@@ -101,4 +104,31 @@ export function ThemeToggleButton() {
                 {dark ? "light mode" : "dark mode"}
             </motion.span>
         </motion.a>);
+}
+
+
+
+export function Container({ children }: { children: React.ReactNode }) {
+    return (
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-auto h-auto gap-2">
+            {children}
+        </motion.div>
+    );
+}
+
+export function ContainerHiddenRow({ children }: { children: React.ReactNode }) {
+    return (
+        <motion.div className="flex flex-row gap-2">
+            {children}
+        </motion.div>
+    );
+}
+
+
+export function ContainerHiddenColumn({ children }: { children: React.ReactNode }) {
+    return (
+        <motion.div className="flex flex-column gap-2 flex-wrap">
+            {children}
+        </motion.div>
+    );
 }

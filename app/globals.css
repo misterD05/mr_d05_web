@@ -26,3 +26,8 @@
 body {
   background: var(--bgc);
 }
+
+
+::-webkit-scrollbar{
+  visibility: hidden;
+}
