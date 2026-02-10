@@ -1,10 +1,18 @@
+"use client"
+import { useRef } from "react";
+import { Container, ContainerHiddenRow, ContainerHiddenColumn } from "../widgets/components";
+import { motion } from "framer-motion";
+
+
 export default function AboutMe() {
   return (
-    <div className="flex items-center w-auto h-auto justify-center bg-(--bgc) text-(--text)">
-      <main className="flex w-fit h-fit flex-row items-center justify-between">
-              TODO about me...
-              add information about me and my skills
-      </main>
-    </div>
+    <motion.div
+      className="flex flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5  p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      <Container><h1 className="w-20 h-auto">TODO about me... add information about me and my skills</h1></Container>
+      <ContainerHiddenColumn>
+        <Container><h1>My github stats</h1></Container>
+        <Container><img src="https://github-stats-dashboard-xi.vercel.app/api/dashboard/misterD05"></img></Container>
+      </ContainerHiddenColumn>
+    </motion.div>
   );
 }
