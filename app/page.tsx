@@ -28,7 +28,6 @@ export default function Home() {
       </ContainerHiddenColumn>
       <ContainerHiddenColumn>
           <Container><h1>hellooo</h1></Container>
-          <Container><h1>hellooo</h1></Container>
       </ContainerHiddenColumn>
       <ContainerHiddenColumn>
           <ContainerHiddenRow><Container><h1>hellooo</h1></Container><Container><h1>hellooo</h1></Container></ContainerHiddenRow>

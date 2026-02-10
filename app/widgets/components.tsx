@@ -12,6 +12,7 @@ export function Loading() {
 }
 
 
+
 type ButtonProps = {
   text: string;
   svg: React.ReactNode;
@@ -110,7 +111,7 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-auto h-auto gap-2">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 flex-1 p-10 w-auto h-auto gap-2">
             {children}
         </motion.div>
     );
