@@ -111,7 +111,7 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 gap-2  w-auto h-full ">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-auto h-full ">
             {children}
         </motion.div>
     );
@@ -119,7 +119,7 @@ export function Container({ children }: { children: React.ReactNode }) {
 
 export function ContainerHiddenRow({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="flex flex-1  flex-row gap-2">
+        <motion.div className="flex flex-1 gap-3 flex-row">
             {children}
         </motion.div>
     );
@@ -128,7 +128,7 @@ export function ContainerHiddenRow({ children }: { children: React.ReactNode }) 
 
 export function ContainerHiddenColumn({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="flex flex-1  flex-col gap-2 ">
+        <motion.div className="flex flex-1 gap-3 flex-col">
             {children}
         </motion.div>
     );

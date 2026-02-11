@@ -20,7 +20,7 @@ export default function Home() {
     <motion.div
       ref={scrollRef}
       onWheel={onWheel}
-      className="flex flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5  p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      className="flex gap-3 flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5  p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
       <Container><h1>TODO my website .... coming soon</h1></Container>
       <ContainerHiddenColumn>
           <Container><h1>hellooo</h1></Container>
