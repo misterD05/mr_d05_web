@@ -111,25 +111,44 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-full h-full ">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-full h-full group">
             {children}
         </motion.div>
     );
 }
 
-export function ContainerHiddenRow({ children }: { children: React.ReactNode }) {
+type ContainerProps = {
+    children: React.ReactNode;
+    isCentered?: boolean;
+    isFitted?: boolean;
+};
+
+export function ContainerHiddenRow({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
-        <motion.div className="flex flex-1 gap-3 flex-row">
+        <motion.div
+            className={`flex flex-1 gap-3 flex-row group ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+        >
             {children}
         </motion.div>
     );
 }
 
-
-export function ContainerHiddenColumn({ children }: { children: React.ReactNode }) {
+export function ContainerHiddenColumn({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
-        <motion.div className="flex flex-1 gap-3 flex-col">
+        <motion.div
+            className={`flex flex-1 gap-3 h-fit w-fit flex-col group ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+        >
             {children}
         </motion.div>
+    );
+}
+
+export function InvisibleTextNotHovered({ text}:{text: string}) {
+    return (
+        <div className="w-auto h-20 flex items-center justify-center m-3">
+            <motion.div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-(--bgc)/40 rounded-[20px] m-3 text-2xl flex items-center justify-center w-70 h-20">
+                {text}
+            </motion.div>
+        </div>
     );
 }
