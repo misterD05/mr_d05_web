@@ -14,19 +14,19 @@ export function Loading() {
 
 
 type ButtonProps = {
-  text: string;
-  svg: React.ReactNode;
-  href: string;
-  color?: string;
+    text: string;
+    svg: React.ReactNode;
+    href: string;
+    color?: string;
 };
 
 export function MenuButtonLogo({ text, href }: ButtonProps) {
     return (
         <motion.a
-              className="m-2 rounded-[20px] text-(--bgc) bg-(--text) p-3 text-lg text-center font-bold w-fit"
-              href={href}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95, rotate: -10 }}
+                className="m-2 rounded-[20px] text-(--bgc) bg-(--text) p-3 text-lg text-center font-bold w-fit"
+                href={href}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95, rotate: -10 }}
             >
             {text}
         </motion.a>
@@ -38,13 +38,13 @@ export function MenuButton({ text, svg, href, color }: ButtonProps) {
     const [hoveredIndex, setHoveredIndex] = useState<boolean>(false);
     return (
     <motion.a
-      initial={{ backgroundColor: `var(${color})` }}
-      className={`group w-auto h-auto m-2 p-3 rounded-[20px] text-(--bgc)  text-lg text-center flex flex-row items-center justify-center`}
-      href={href}
-      whileTap={{ scale: 0.95, rotate: -10 }}
-      onHoverStart={()=>setHoveredIndex(true)}
-      onHoverEnd={() => setHoveredIndex(false)}
-      onTapStart={()=> console.log("prova")}
+        className={`group w-auto h-auto m-2 p-3 rounded-[20px] text-(--bgc)  text-lg text-center flex flex-row items-center justify-center`}
+        href={href}
+        whileTap={{ scale: 0.95, rotate: -10 }}
+        initial={{ backgroundColor: `var(${color})` }}
+        onHoverStart={()=>setHoveredIndex(true)}
+        onHoverEnd={() => setHoveredIndex(false)}
+        onTapStart={()=> console.log("prova")}
     >
         {svg}
         <motion.span
@@ -111,7 +111,7 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-auto h-full ">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-full h-full ">
             {children}
         </motion.div>
     );
