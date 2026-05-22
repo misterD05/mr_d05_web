@@ -111,7 +111,7 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 p-10 w-full h-full group">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 w-full h-full">
             {children}
         </motion.div>
     );
@@ -126,7 +126,7 @@ type ContainerProps = {
 export function ContainerHiddenRow({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
         <motion.div
-            className={`flex flex-1 gap-3 flex-row group ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+            className={`flex flex-1 gap-3 flex-row ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
         >
             {children}
         </motion.div>
@@ -136,17 +136,36 @@ export function ContainerHiddenRow({ children, isCentered = false, isFitted = fa
 export function ContainerHiddenColumn({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
         <motion.div
-            className={`flex flex-1 gap-3 h-fit w-fit flex-col group ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+            className={`flex flex-1 gap-3 h-fit w-fit flex-col ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
         >
             {children}
         </motion.div>
     );
 }
 
-export function InvisibleTextNotHovered({ text}:{text: string}) {
+type SeparatorProps = {
+    orientation?: "horizontal" | "vertical";
+};
+
+export function Separator({ orientation = "horizontal" }: SeparatorProps) {
+    const isHorizontal = orientation === "horizontal";
+
+    return (
+        <div
+            className={`
+                border-border-color/50
+                ${isHorizontal
+                    ? "w-full border-t"
+                    : "h-full border-l shrink-0"}
+            `}
+        ></div>
+    );
+}
+
+export function Text({ text}:{text: string}) {
     return (
         <div className="w-auto h-20 flex items-center justify-center m-3">
-            <motion.div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-(--bgc)/40 rounded-[20px] m-3 text-2xl flex items-center justify-center w-70 h-20">
+            <motion.div className="text-2xl flex items-center justify-center w-70 h-20">
                 {text}
             </motion.div>
         </div>

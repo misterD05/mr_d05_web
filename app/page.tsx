@@ -1,6 +1,6 @@
 "use client"
 import { useRef } from "react";
-import { Container, ContainerHiddenRow, ContainerHiddenColumn, InvisibleTextNotHovered } from "./widgets/components";
+import { Container, ContainerHiddenRow, ContainerHiddenColumn, Text, Separator } from "./widgets/components";
 import { motion } from "framer-motion";
 import { SushiLanguage } from "./widgets/LAndF";
 
@@ -59,43 +59,48 @@ export default function Home() {
         <ContainerHiddenRow isFitted={true}>
           <h1 className="text-3xl h-30 w-full flex justify-start items-end">My menu:</h1>
         </ContainerHiddenRow>
+        <br />
         <ContainerHiddenColumn>
-          <Container>
-            <InvisibleTextNotHovered text="For the web"></InvisibleTextNotHovered>
+          <ContainerHiddenColumn>
+            <Container><Text text="For the web"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
               <ContainerHiddenColumn isCentered={true}>
-                <SushiLanguage svg="HTML" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="CSS" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="HTML" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage svg="CSS" text="" href=""></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true}>
-                <SushiLanguage svg="JavaScript" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="TypeScript" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="JavaScript" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage svg="TypeScript" text="" href=""></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true}>
-                <SushiLanguage svg="Next.js" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="Framer Motion" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="Next.js" text="" href="https://nextjs.org/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Framer Motion" text="" href="https://www.framer.com"></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true}>
-                <SushiLanguage svg="React" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="Tailwind" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="React" text="" href="https://react.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Tailwind" text="" href="https://tailwindcss.com/"></SushiLanguage></Container>
               </ContainerHiddenColumn>
             </ContainerHiddenRow>
-          </Container>
+          </ContainerHiddenColumn>
+
+          <Separator orientation="horizontal"></Separator>
+
           <ContainerHiddenRow>
-            <Container>
-            <InvisibleTextNotHovered text="For apps"></InvisibleTextNotHovered>
+          <ContainerHiddenColumn>
+            <Container><Text text="For apps"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <SushiLanguage svg="Dart" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="Flutter" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="Dart" text="" href="https://dart.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Flutter" text="" href="https://flutter.dev/"></SushiLanguage></Container>
             </ContainerHiddenRow>
-          </Container>
-          <Container>
-            <InvisibleTextNotHovered text="IDEs"></InvisibleTextNotHovered>
+          </ContainerHiddenColumn>
+          <Separator orientation="vertical"></Separator>
+          <ContainerHiddenColumn>
+            <Container><Text text="IDEs"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <SushiLanguage svg="VS Codium" text="" href=""></SushiLanguage>
-                <SushiLanguage svg="JetBrains" text="" href=""></SushiLanguage>
+                <Container><SushiLanguage svg="VS Codium" text="" href="https://vscodium.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="JetBrains" text="" href="https://www.jetbrains.com/"></SushiLanguage></Container>
             </ContainerHiddenRow>
-          </Container>
+          </ContainerHiddenColumn>
           </ContainerHiddenRow>
         </ContainerHiddenColumn>
       </ContainerHiddenColumn>

@@ -83,7 +83,7 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
             <img
             src={techIcons[svg]}
             alt={text}
-            className="w-25 h-25 m-2"
+            className="w-25 h-25 m-5"
             />
         </motion.a>
     );
@@ -96,7 +96,7 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
             <img
             src={techIcons[svg]}
             alt={text}
-            className="w-25 h-25"
+            className="w-25 h-25 m-5"
             />
         </motion.button>
     );
