@@ -17,7 +17,7 @@ export const techIcons: Record<string, string> = {
     "TypeScript": "https://cdn.simpleicons.org/typescript/3178C6",
     "JavaScript": "https://cdn.simpleicons.org/javascript/F7DF1E",
     "Python": "https://cdn.simpleicons.org/python/3776AB",
-    "Java": "https://cdn.simpleicons.org/java/ED8B00",
+    "Java": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     "C": "https://cdn.simpleicons.org/c/A8B9CC",
     "C++": "https://cdn.simpleicons.org/cplusplus/00599C",
     "C#": "https://cdn.simpleicons.org/csharp/239120",
@@ -105,23 +105,23 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
 
 
 /*
-Java
-C
-Python
-PHP
-Dart
-Typescript
-Javascript
-Rust
+/Java
+/C
+/Python
+/PHP
+/Dart
+/ Typescript
+/ Javascript
+/Rust
 
-React
-Flutter
-Taillwind
-FramerMotion
+/React
+/Flutter
+/Taillwind
+/FramerMotion
 
 
-HTML
-CSS
+/HTML
+/CSS
 
 
 JSON
@@ -133,8 +133,8 @@ excell
 powerpoint
 canva
 SVGator
-VSCode
-JetBrains
+/VSCodium
+/JetBrains
 
 
 my languages

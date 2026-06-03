@@ -126,7 +126,7 @@ type ContainerProps = {
 export function ContainerHiddenRow({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
         <motion.div
-            className={`flex flex-1 gap-3 flex-row ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+            className={`flex flex-1 gap-3 flex-row ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : "h-full w-full"}`}
         >
             {children}
         </motion.div>
@@ -136,7 +136,7 @@ export function ContainerHiddenRow({ children, isCentered = false, isFitted = fa
 export function ContainerHiddenColumn({ children, isCentered = false, isFitted = false }: ContainerProps) {
     return (
         <motion.div
-            className={`flex flex-1 gap-3 h-fit w-fit flex-col ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : ""}`}
+            className={`flex flex-1 gap-3 h-fit w-fit flex-col ${isCentered ? "items-center justify-center" : ""} ${isFitted ? "h-fit w-fit" : "h-full w-full"}`}
         >
             {children}
         </motion.div>
@@ -145,18 +145,20 @@ export function ContainerHiddenColumn({ children, isCentered = false, isFitted =
 
 type SeparatorProps = {
     orientation?: "horizontal" | "vertical";
+    margin: number;
 };
 
-export function Separator({ orientation = "horizontal" }: SeparatorProps) {
+export function Separator({ orientation = "horizontal", margin = 0}: SeparatorProps) {
     const isHorizontal = orientation === "horizontal";
 
     return (
         <div
             className={`
-                border-border-color/50
+                shrink-0
+                m-${margin}
                 ${isHorizontal
-                    ? "w-full border-t"
-                    : "h-full border-l shrink-0"}
+                    ? "w-full border-t border-(--text)"
+                    : "h-auto min-h-[20px] border-l border-(--text) self-stretch"}
             `}
         ></div>
     );
