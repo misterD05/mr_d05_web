@@ -111,7 +111,31 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 w-full h-full">
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 w-full h-full"
+            initial="rest"
+            animate="rest"
+            whileHover="hover"
+            variants={{
+                rest: {
+                    opacity: 0.8,
+                    scale: 0.95,
+
+                    backgroundColor: 'color-mix(in srgb, var(--text) 10%, transparent)',
+                    transition: {
+                        duration: 2,
+                        ease: [0.25, 1, 0.5, 1],
+                    },
+                },
+                hover: {
+                    opacity: 1,
+                    scale: 1,
+                    backgroundColor: 'color-mix(in srgb, var(--text) 60%, transparent)',
+                    transition: {
+                        duration: 0.2,
+                        ease: "easeOut",
+                    }
+                },
+        }}>
             {children}
         </motion.div>
     );

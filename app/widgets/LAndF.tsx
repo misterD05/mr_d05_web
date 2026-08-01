@@ -35,11 +35,13 @@ export const techIcons: Record<string, string> = {
     "Flutter": "https://cdn.simpleicons.org/flutter/02569B",
     "React Native": "https://cdn.simpleicons.org/react/61DAFB",
     "Android": "https://cdn.simpleicons.org/android/3DDC84",
+    "Electron": "https://cdn.simpleicons.org/electron",
     "iOS": "https://cdn.simpleicons.org/apple/000000",
 
     // --- FRONTEND & WEB ---
     "React": "https://cdn.simpleicons.org/react/61DAFB",
     "Next.js": "https://cdn.simpleicons.org/nextdotjs/000000",
+    "Vite": "https://cdn.simpleicons.org/vite",
     "Vue.js": "https://cdn.simpleicons.org/vuedotjs/4FC08D",
     "Angular": "https://cdn.simpleicons.org/angular/DD0031",
     "Svelte": "https://cdn.simpleicons.org/svelte/FF3E00",

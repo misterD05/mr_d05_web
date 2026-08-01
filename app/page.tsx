@@ -4,6 +4,7 @@ import { Container, ContainerHiddenRow, ContainerHiddenColumn, Text, Separator }
 import { motion } from "framer-motion";
 import { SushiLanguage } from "./widgets/LAndF";
 import { CpuChip } from "../public/cpuAnimated";
+import Emoji from "react-emoji-render";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -22,7 +23,7 @@ export default function Home() {
     <motion.div
       ref={scrollRef}
       onWheel={onWheel}
-      className="flex gap-3 flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5  p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+      className="flex gap-3 flex-row w-full min-h-[100dvh] bg-(--bgc) text-(--text) gap-5 pl-15 p-5 overflow-x-auto scroll-smooth snap-x snap-mandatory">
 
       <ContainerHiddenRow isFitted={true}>
 
@@ -41,7 +42,7 @@ export default function Home() {
           Programming and building things just for fun
           <br />
           <br />
-          What to add here ?
+            <h1 className="text-4xl h-10 w-full flex justify-start items-end">My menu ➡️➡️➡️</h1>
         </h2>
         <div className="h-full w-full items-end justify-start mt-20">
           <motion.div
@@ -49,17 +50,12 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <CpuChip></CpuChip>
+            <CpuChip color="color-mix(in srgb, var(--blue) 80%, var(--acqua) 20%)"></CpuChip>
           </motion.div>
         </div>
     </ContainerHiddenColumn>
 
     <ContainerHiddenColumn isFitted={true}>
-        <ContainerHiddenRow isFitted={true}>
-          <h1 className="text-4xl h-30 w-full flex justify-start items-end">My menu:</h1>
-        </ContainerHiddenRow>
-        <br />
-
         <ContainerHiddenColumn isFitted={true}>
           <ContainerHiddenColumn>
             <Container><Text text="For the web"></Text></Container>
@@ -91,23 +87,41 @@ export default function Home() {
             <ContainerHiddenRow isCentered={true}>
                 <Container><SushiLanguage svg="Dart" text="" href="https://dart.dev/"></SushiLanguage></Container>
                 <Container><SushiLanguage svg="Flutter" text="" href="https://flutter.dev/"></SushiLanguage></Container>
+                </ContainerHiddenRow>
+                <ContainerHiddenRow isCentered={true}>
+                <Container><SushiLanguage svg="Vite" text="" href="https://vite.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Electron" text="" href="https://www.electronjs.org/"></SushiLanguage></Container>
             </ContainerHiddenRow>
           </ContainerHiddenColumn>
           <Separator orientation="vertical" margin={0}></Separator>
-          <ContainerHiddenColumn>
-            <Container><Text text="IDEs"></Text></Container>
+          <ContainerHiddenRow isCentered={true} isFitted={true}>
+            <ContainerHiddenColumn isFitted={true}>
+            <Container><Text text="For backend"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="VS Codium" text="" href="https://vscodium.com/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="JetBrains" text="" href="https://www.jetbrains.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Docker" text="" href="https://www.docker.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="XAMPP" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
             </ContainerHiddenRow>
-            </ContainerHiddenColumn>
+            <ContainerHiddenRow isCentered={true}>
+                <Container><SushiLanguage svg="Node.js" text="" href="https://nodejs.org/en"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="MySQL" text="" href=""></SushiLanguage></Container>
+            </ContainerHiddenRow>
+          </ContainerHiddenColumn>
+        </ContainerHiddenRow>
           </ContainerHiddenRow>
         </ContainerHiddenColumn>
     </ContainerHiddenColumn>
 
     <Separator orientation="vertical" margin={0}></Separator>
 
-    <ContainerHiddenColumn isFitted={true}>
+        <ContainerHiddenColumn isFitted={true}>
+            <ContainerHiddenColumn isFitted={true}>
+            <Container><Text text="IDEs"></Text></Container>
+            <ContainerHiddenRow isCentered={true}>
+                <Container><SushiLanguage svg="VS Codium" text="" href="https://vscodium.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="JetBrains" text="" href="https://www.jetbrains.com/"></SushiLanguage></Container>
+            </ContainerHiddenRow>
+        </ContainerHiddenColumn>
+
         <ContainerHiddenColumn isFitted={true}>
             <Container><Text text="Other languages"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
@@ -123,27 +137,7 @@ export default function Home() {
           </ContainerHiddenColumn>
 
 
-          <ContainerHiddenRow isCentered={true} isFitted={true}>
-            <ContainerHiddenColumn isFitted={true}>
-            <Container><Text text="For backend"></Text></Container>
-            <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Docker" text="" href="https://www.docker.com/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="XAMPP" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
-            </ContainerHiddenRow>
-            <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Node.js" text="" href="https://nodejs.org/en"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="MySQL" text="" href=""></SushiLanguage></Container>
-            </ContainerHiddenRow>
-          </ContainerHiddenColumn>
 
-          <ContainerHiddenColumn isFitted={true}>
-            <Container><Text text="OS"></Text></Container>
-            <ContainerHiddenColumn isCentered={true} isFitted={true}>
-                <Container><SushiLanguage svg="Cachy" text="" href="https://www.docker.com/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="Fedora" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
-            </ContainerHiddenColumn>
-          </ContainerHiddenColumn>
-        </ContainerHiddenRow>
 
         </ContainerHiddenColumn>
       </ContainerHiddenRow>
