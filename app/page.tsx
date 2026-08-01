@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Container, ContainerHiddenRow, ContainerHiddenColumn, Text, Separator } from "./widgets/components";
 import { motion } from "framer-motion";
 import { SushiLanguage } from "./widgets/LAndF";
+import { CpuChip } from "../public/cpuAnimated";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -48,13 +49,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <object
-              type="image/svg+xml"
-              data="/cpu-wnw.svg"
-              width={350}
-              height={350}
-              className="pointer-events-none"
-            />
+            <CpuChip></CpuChip>
           </motion.div>
         </div>
     </ContainerHiddenColumn>
@@ -112,29 +107,45 @@ export default function Home() {
 
     <Separator orientation="vertical" margin={0}></Separator>
 
-    <ContainerHiddenColumn isCentered={true} isFitted={true}>
-      <ContainerHiddenRow isCentered={true}><Container><Text text="Other languages"></Text></Container></ContainerHiddenRow>
-      <ContainerHiddenRow isCentered={true} isFitted={true}>
-        <ContainerHiddenColumn isCentered={true} isFitted={true}>
+    <ContainerHiddenColumn isFitted={true}>
+        <ContainerHiddenColumn isFitted={true}>
+            <Container><Text text="Other languages"></Text></Container>
+            <ContainerHiddenRow isCentered={true}>
               <Container><SushiLanguage svg="C" text="" href=""></SushiLanguage></Container>
-              <Separator orientation="horizontal" margin={4}></Separator>
-          <Container><SushiLanguage svg="Rust" text="" href=""></SushiLanguage></Container>
-            </ContainerHiddenColumn>
-        <Separator orientation="vertical" margin={4}></Separator>
-        <ContainerHiddenColumn isCentered={true} isFitted={true}>
+              <Container><SushiLanguage svg="Rust" text="" href=""></SushiLanguage></Container>
               <Container><SushiLanguage svg="PHP" text="" href=""></SushiLanguage></Container>
-              <Separator orientation="horizontal" margin={4}></Separator>
-          <Container><SushiLanguage svg="Java" text="" href=""></SushiLanguage></Container>
-            </ContainerHiddenColumn>
-
-            <Separator orientation="vertical" margin={4}></Separator>
-        <ContainerHiddenColumn isCentered={true} isFitted={true}>
+            </ContainerHiddenRow>
+            <ContainerHiddenRow isCentered={true}>
+              <Container><SushiLanguage svg="Java" text="" href=""></SushiLanguage></Container>
               <Container><SushiLanguage svg="C++" text="" href=""></SushiLanguage></Container>
-              <Separator orientation="horizontal" margin={4}></Separator>
-          <Container><SushiLanguage svg="Python" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage svg="Python" text="" href=""></SushiLanguage></Container>
+            </ContainerHiddenRow>
+          </ContainerHiddenColumn>
+
+
+          <ContainerHiddenRow isCentered={true} isFitted={true}>
+            <ContainerHiddenColumn isFitted={true}>
+            <Container><Text text="For backend"></Text></Container>
+            <ContainerHiddenRow isCentered={true}>
+                <Container><SushiLanguage svg="Docker" text="" href="https://www.docker.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="XAMPP" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
+            </ContainerHiddenRow>
+            <ContainerHiddenRow isCentered={true}>
+                <Container><SushiLanguage svg="Node.js" text="" href="https://nodejs.org/en"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="MySQL" text="" href=""></SushiLanguage></Container>
+            </ContainerHiddenRow>
+          </ContainerHiddenColumn>
+
+          <ContainerHiddenColumn isFitted={true}>
+            <Container><Text text="OS"></Text></Container>
+            <ContainerHiddenColumn isCentered={true} isFitted={true}>
+                <Container><SushiLanguage svg="Cachy" text="" href="https://www.docker.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage svg="Fedora" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
+            </ContainerHiddenColumn>
+          </ContainerHiddenColumn>
+        </ContainerHiddenRow>
+
         </ContainerHiddenColumn>
-      </ContainerHiddenRow>
-    </ContainerHiddenColumn>
       </ContainerHiddenRow>
 
 

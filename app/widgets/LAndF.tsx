@@ -63,6 +63,7 @@ export const techIcons: Record<string, string> = {
 
     // --- DEVOPS, CLOUD & TOOLS ---
     "Docker": "https://cdn.simpleicons.org/docker/2496ED",
+    "XAMPP": "https://cdn.simpleicons.org/xampp",
     "Kubernetes": "https://cdn.simpleicons.org/kubernetes/326CE5",
     "AWS": "https://cdn.simpleicons.org/amazonaws/232F3E",
     "Git": "https://cdn.simpleicons.org/git/F05032",
@@ -70,6 +71,10 @@ export const techIcons: Record<string, string> = {
     "VS Codium": "https://cdn.simpleicons.org/vscodium/007ACC",
     "JetBrains": "https://cdn.simpleicons.org/jetbrains",
     "Figma": "https://cdn.simpleicons.org/figma/F24E1E",
+
+    // --- OS ---
+    "Cachy": "https://cdn.simpleicons.org/cachyos",
+    "Fedora": "https://cdn.simpleicons.org/fedora",
 };
 
 export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps) {
@@ -127,12 +132,19 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
 JSON
 MSGPACK
 
+docker
+node
+xampp
+mysql
+
 
 word
 excell
 powerpoint
 canva
 SVGator
+github
+
 /VSCodium
 /JetBrains
 
