@@ -197,3 +197,53 @@ export function Text({ text}:{text: string}) {
         </div>
     );
 }
+
+
+
+interface VerticalMarqueeProps {
+    children: React.ReactNode;
+    speed?: number;
+    direction?: 'up' | 'down';
+    pauseOnHover?: boolean;
+}
+
+
+
+export default function VerticalMarquee({
+    children,
+    speed = 10,
+    direction = 'up',
+    pauseOnHover = true, }: VerticalMarqueeProps) {
+
+    let letters = children?.toString().split("");
+
+    function returnLetters(word : string[] | any) {
+        let letAndSpaces = [];
+        for (let a of word) {
+            letAndSpaces.push(a);
+            letAndSpaces.push(<br/>)
+        }
+        return letAndSpaces
+    }
+
+    return (
+        <div className="bg-black h-full w-auto overflow-hidden border-4 border-gray-500 drop-shadow-[0_0_2px_white] filter">
+            <motion.div
+                animate={{
+                    y: direction == 'up' ? ['100%', '-100%'] : ['-100%', '100%'],
+                }}
+                transition={{
+                    duration: speed,
+                    ease: 'linear',
+                    repeat: Infinity,
+                }}
+                className="m-5 text-4xl flex flex-col items-center italic text-(--magenta)">
+                {
+                    returnLetters(letters)
+                }
+            </motion.div>
+        </div>
+    )
+}
+
+

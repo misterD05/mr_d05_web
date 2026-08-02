@@ -42,7 +42,7 @@ export default function Home() {
           Programming and building things just for fun
           <br />
           <br />
-            <h1 className="text-4xl h-10 w-full flex justify-start items-end">My menu ➡️➡️➡️</h1>
+            <div className="text-4xl h-10 w-full flex justify-start items-end">My menu ➡️➡️➡️</div>
         </h2>
         <div className="h-full w-full items-end justify-start mt-20">
           <motion.div
