@@ -209,7 +209,7 @@ interface VerticalMarqueeProps {
 
 
 
-export default function VerticalMarquee({
+export function VerticalMarquee({
     children,
     speed = 10,
     direction = 'up',
@@ -219,15 +219,24 @@ export default function VerticalMarquee({
 
     function returnLetters(word : string[] | any) {
         let letAndSpaces = [];
+        let b = "";
         for (let a of word) {
-            letAndSpaces.push(a);
-            letAndSpaces.push(<br/>)
+
+            if (a == ":" || a == "X" || a == ")" || a == "D" ) {
+                if (b == "") {
+                    b = a;
+                    continue;
+                }
+                letAndSpaces.push(b, a, <br/>);
+                continue;
+            }
+            letAndSpaces.push(a, <br/>);
         }
         return letAndSpaces
     }
 
     return (
-        <div className="bg-black h-full w-auto overflow-hidden border-4 border-gray-500 drop-shadow-[0_0_2px_white] filter">
+        <div className="bg-black h-[calc(100%-5rem)] w-auto overflow-hidden border-4 border-gray-500 inset-shadow-[0_0_5px_grey] filter m-10">
             <motion.div
                 animate={{
                     y: direction == 'up' ? ['100%', '-100%'] : ['-100%', '100%'],
@@ -237,7 +246,7 @@ export default function VerticalMarquee({
                     ease: 'linear',
                     repeat: Infinity,
                 }}
-                className="m-5 text-4xl flex flex-col items-center italic text-(--magenta)">
+                className="m-5 text-7xl flex flex-col text-center italic font-extrabold text-(--magenta)">
                 {
                     returnLetters(letters)
                 }
@@ -247,3 +256,23 @@ export default function VerticalMarquee({
 }
 
 
+export function HorizontalArrow({ direction = "right", size = 64}) {
+    const svg = direction === "right" ? <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>;
+
+    return (
+        <div className="h-full w-fit flex items-center ">
+            <motion.div
+                animate={{
+                    x: ['0%', '20%', '0%'],
+                }}
+                transition={{
+                    duration: 1,
+                    ease: 'linear',
+                    repeat: Infinity,
+                }}
+                className=' ' >
+                {svg}
+                </motion.div>
+        </div>
+    )
+}
