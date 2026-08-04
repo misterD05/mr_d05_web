@@ -61,20 +61,20 @@ export default function Home() {
             <Container><Text text="For the web"></Text></Container>
             <ContainerHiddenRow isCentered={true} >
               <ContainerHiddenColumn isCentered={true} isFitted={true}>
-                <Container><SushiLanguage svg="HTML" text="" href=""></SushiLanguage></Container>
-                <Container><SushiLanguage svg="CSS" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="HTML" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="CSS" text="" href=""></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true} isFitted={true}>
-                <Container><SushiLanguage svg="JavaScript" text="" href=""></SushiLanguage></Container>
-                <Container><SushiLanguage svg="TypeScript" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="JavaScript" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="TypeScript" text="" href=""></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true} isFitted={true}>
-                <Container><SushiLanguage svg="Next.js" text="" href="https://nextjs.org/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="Framer Motion" text="" href="https://www.framer.com"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Next.js" text="" href="https://nextjs.org/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Framer Motion" text="" href="https://www.framer.com"></SushiLanguage></Container>
               </ContainerHiddenColumn>
               <ContainerHiddenColumn isCentered={true} isFitted={true}>
-                <Container><SushiLanguage svg="React" text="" href="https://react.dev/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="Tailwind" text="" href="https://tailwindcss.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="React" text="" href="https://react.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Tailwind" text="" href="https://tailwindcss.com/"></SushiLanguage></Container>
               </ContainerHiddenColumn>
             </ContainerHiddenRow>
           </ContainerHiddenColumn>
@@ -85,12 +85,12 @@ export default function Home() {
           <ContainerHiddenColumn isFitted={true}>
             <Container><Text text="For apps"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Dart" text="" href="https://dart.dev/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="Flutter" text="" href="https://flutter.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Dart" text="" href="https://dart.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Flutter" text="" href="https://flutter.dev/"></SushiLanguage></Container>
                 </ContainerHiddenRow>
                 <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Vite" text="" href="https://vite.dev/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="Electron" text="" href="https://www.electronjs.org/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Vite" text="" href="https://vite.dev/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25}  svg="Electron" text="" href="https://www.electronjs.org/"></SushiLanguage></Container>
             </ContainerHiddenRow>
           </ContainerHiddenColumn>
           <Separator orientation="vertical" margin={0}></Separator>
@@ -98,12 +98,12 @@ export default function Home() {
             <ContainerHiddenColumn isFitted={true}>
             <Container><Text text="For backend"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Docker" text="" href="https://www.docker.com/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="XAMPP" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Docker" text="" href="https://www.docker.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="XAMPP" text="" href="https://www.apachefriends.org/it/index.html"></SushiLanguage></Container>
             </ContainerHiddenRow>
             <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="Node.js" text="" href="https://nodejs.org/en"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="MySQL" text="" href=""></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="Node.js" text="" href="https://nodejs.org/en"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="MySQL" text="" href=""></SushiLanguage></Container>
             </ContainerHiddenRow>
           </ContainerHiddenColumn>
         </ContainerHiddenRow>
@@ -117,22 +117,22 @@ export default function Home() {
             <ContainerHiddenColumn isFitted={true}>
             <Container><Text text="IDEs"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-                <Container><SushiLanguage svg="VS Codium" text="" href="https://vscodium.com/"></SushiLanguage></Container>
-                <Container><SushiLanguage svg="JetBrains" text="" href="https://www.jetbrains.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="VS Codium" text="" href="https://vscodium.com/"></SushiLanguage></Container>
+                <Container><SushiLanguage dimension={25} svg="JetBrains" text="" href="https://www.jetbrains.com/"></SushiLanguage></Container>
             </ContainerHiddenRow>
         </ContainerHiddenColumn>
 
         <ContainerHiddenColumn isFitted={true}>
             <Container><Text text="Other languages"></Text></Container>
             <ContainerHiddenRow isCentered={true}>
-              <Container><SushiLanguage svg="C" text="" href=""></SushiLanguage></Container>
-              <Container><SushiLanguage svg="Rust" text="" href=""></SushiLanguage></Container>
-              <Container><SushiLanguage svg="PHP" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="C" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="Rust" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="PHP" text="" href=""></SushiLanguage></Container>
             </ContainerHiddenRow>
             <ContainerHiddenRow isCentered={true}>
-              <Container><SushiLanguage svg="Java" text="" href=""></SushiLanguage></Container>
-              <Container><SushiLanguage svg="C++" text="" href=""></SushiLanguage></Container>
-              <Container><SushiLanguage svg="Python" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="Java" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="C++" text="" href=""></SushiLanguage></Container>
+              <Container><SushiLanguage dimension={25} svg="Python" text="" href=""></SushiLanguage></Container>
             </ContainerHiddenRow>
           </ContainerHiddenColumn>
 
