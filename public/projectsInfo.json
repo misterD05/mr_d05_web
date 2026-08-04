@@ -1,11 +1,11 @@
 {
     "projects" : [
         {
-            "name" : "",
-            "description" : "",
-            "languages&Tools" : "",
+            "name" : "mr_d05_web",
+            "description" : "My portfolio",
+            "languages&Tools" : ["Netx.js", "React", "Tailwind", "Framer Motion", "Typescript"],
             "moreInfo": "",
-            "link" : "",
+            "link" : "https://mr-d05-web.vercel.app/",
             "image" :  ""
         },
         {

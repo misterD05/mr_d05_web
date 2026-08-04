@@ -1,4 +1,4 @@
-import {Container, ContainerHiddenColumn, HorizontalArrow, VerticalMarquee}  from "../widgets/components";
+import {Container, ContainerHiddenColumn, GithubReadmeWidget, HorizontalArrow, VerticalMarquee}  from "../widgets/components";
 
 export default function MyProjects() {
   return (
@@ -9,6 +9,7 @@ export default function MyProjects() {
         <ContainerHiddenColumn isCentered={true} isFitted={true}>
           <Container>CIao</Container>
           <Container>CIao</Container>
+          <GithubReadmeWidget owner="misterD05" repo="mr_d05_web"></GithubReadmeWidget>
         </ContainerHiddenColumn>
 
       </main>
