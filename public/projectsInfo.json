@@ -6,14 +6,14 @@
             "description" : "My portfolio",
             "languagesAndTools" : ["Next.js", "React", "Tailwind", "Framer Motion", "TypeScript", "Node.js", "GitHub"],
             "link" : "https://mr-d05-web.vercel.app/",
-            "image" :  "portfolio.tsx"
+            "image" :  "portfolio"
         },
         "miramer_app_smart_mirror" : {
             "name" : "miramer_app_smart_mirror",
             "description" : "An Electron app for homemade smart mirrors",
             "languagesAndTools" : ["Electron", "Vite", "React", "Tailwind", "Framer Motion", "TypeScript"],
             "link" : "https://github.com/misterD05/mirame-app-smart-mirror",
-            "image" :  "mirror.tsx"
+            "image" :  "mirame"
         }
     }
 

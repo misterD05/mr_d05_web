@@ -3,7 +3,8 @@ import "../globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ElementType, useEffect, useState } from "react";
-import projectsInfos from "../../public/projectsInfo.json"
+import projectsInfos from "../../public/projectsInfo.json";
+import mapIcons from "../../public/svgs";
 import { SushiLanguage } from "./LAndF";
 
 export function Loading() {
@@ -440,7 +441,7 @@ export function GithubReadmeWidget({ owner, repo, link, buttonLabel = 'View READ
                 <a
                     href={`${link}`}
                     className={
-                        'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 w-fit m-1'
+                        'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 w-fit m-4'
                     }
                 >
                     <svg className="w-5 h-5 text-(--text)" fill="currentColor" viewBox="0 0 24 24">
@@ -486,23 +487,27 @@ export function DirectoryProject({ repo }: DirectoryProjectProps) {
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-(--magenta) mr-3" />
                         Loading content...
                     </div> :
-                    <div className="p-5">
+                    <div className="flex flex-row items-center">
+                        {mapIcons[data.image as keyof typeof mapIcons]}
+                        <div className="p-5 flex flex-col items-start justify-center gap-4">
 
-                        <h1>Project: {data.name}</h1>
-                        <p>Description: {data.description}</p>
-                        <Stikers list={data.languagesAndTools}></Stikers>
-                        <a
-                            href={`${data.link}`}
-                            className={
-                                'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 m-1 w-fit'
-                            }
-                        >
-                            <svg className="w-5 h-5 text-(--text)" fill="currentColor" viewBox="0 0 24 24">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                            </svg>
-                            Link
-                        </a>
-                        <GithubReadmeWidget owner={owner} repo={data.name} link={data.link}></GithubReadmeWidget>
+                            <h1 className="text-2xl  flex gap-3">Project: <h1 className="font-bold text-(--mode)">{data.name}</h1></h1>
+                            <p className="text-large  flex gap-3">Description: <p className="font-bold text-(--tangerine)">{data.description}</p></p>
+                            <Stikers list={data.languagesAndTools}></Stikers>
+                            <div className="flex flex-row items-center gap-1">
+                                <a
+                                    href={`${data.link}`}
+                                    className={
+                                        'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 w-fit'
+                                    }
+                                >
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                                    Repo link
+                                </a>
+                                <GithubReadmeWidget owner={owner} repo={data.name} link={data.link}></GithubReadmeWidget>
+                            </div>
+                        </div>
                     </div>
             }
 
@@ -532,7 +537,7 @@ export function Stikers({ list = [] }: { list: Array<string> }) {
     }
 
     return (
-        <div className="bg-black w-65 h-auto overflow-hidden border-2 border-(--text) rounded-xl inset-shadow-[0_0_5px_grey] filter m-1">
+        <div className="bg-black w-80 h-auto overflow-hidden border-2 border-(--text) rounded-xl">
             <motion.div
                 animate={{
                     x: ['100%', '-100%'],
