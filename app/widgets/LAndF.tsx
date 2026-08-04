@@ -8,6 +8,7 @@ type SushiProps = {
     text: string;
     svg: string;
     href: string;
+    dimension: number;
     toggle?: Function;
     state?: boolean;
 };
@@ -79,7 +80,7 @@ export const techIcons: Record<string, string> = {
     "Fedora": "https://cdn.simpleicons.org/fedora",
 };
 
-export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps) {
+export function SushiLanguage({ text, svg, href="", dimension = 25, toggle = ()=>{}}: SushiProps) {
     if(href != ""){
     return (
         <motion.a
@@ -90,7 +91,7 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
             <img
             src={techIcons[svg]}
             alt={text}
-            className="w-25 h-25 m-5"
+            className={`w-${dimension} h-${dimension} m-${dimension/5}`}
             />
         </motion.a>
     );
@@ -103,7 +104,7 @@ export function SushiLanguage({ text, svg, href="", toggle = ()=>{}}: SushiProps
             <img
             src={techIcons[svg]}
             alt={text}
-            className="w-25 h-25 m-5"
+            className={`w-${dimension} h-${dimension} m-${dimension/5}`}
             />
         </motion.button>
     );

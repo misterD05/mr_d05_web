@@ -3,9 +3,8 @@ import "../globals.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { div } from "framer-motion/client";
 import { ElementType, useEffect, useState } from "react";
-
-
-
+import projectsInfos from "../../public/projectsInfo.json"
+import { SushiLanguage } from "./LAndF";
 
 export function Loading() {
     return <>TODO</>
@@ -227,13 +226,15 @@ export function VerticalMarquee({
                     b = a;
                     continue;
                 }
-                letAndSpaces.push(b, a, <br/>);
+                letAndSpaces.push(b, a);
                 continue;
             }
-            letAndSpaces.push(a, <br/>);
+            letAndSpaces.push(a);
         }
-        return letAndSpaces
+        return letAndSpaces;
     }
+
+    letters = returnLetters(children);
 
     return (
         <div className="bg-black h-[calc(100%-5rem)] w-auto overflow-hidden border-4 border-gray-500 inset-shadow-[0_0_5px_grey] filter m-10">
@@ -246,10 +247,11 @@ export function VerticalMarquee({
                     ease: 'linear',
                     repeat: Infinity,
                 }}
-                className="m-5 text-7xl flex flex-col text-center italic font-extrabold text-(--magenta)">
+                className="m-5 text-7xl flex flex-col items-center italic font-extrabold text-(--magenta)">
                 {
-                    returnLetters(letters)
-                }
+                    letters.map((char, index) => (
+                        <span key={index}>{char}</span>
+                ))}
             </motion.div>
         </div>
     )
@@ -257,7 +259,7 @@ export function VerticalMarquee({
 
 
 export function HorizontalArrow({ direction = "right", size = 64}) {
-    const svg = direction === "right" ? <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>;
+    const svg = direction === "right" ? <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="var(--text)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right-icon lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-chevron-left-icon lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>;
 
     return (
         <div className="h-full w-fit flex items-center ">
@@ -278,13 +280,14 @@ export function HorizontalArrow({ direction = "right", size = 64}) {
 }
 
 interface GithubReadmeWidgetProps {
-  owner: string;
-  repo: string;
-  buttonLabel?: string;
-  buttonClassName?: string;
+    owner: string;
+    repo: string;
+    link: string;
+    buttonLabel?: string;
+    buttonClassName?: string;
 }
 
-export function GithubReadmeWidget({ owner, repo, buttonLabel = 'View README', buttonClassName = '',}: GithubReadmeWidgetProps) {
+export function GithubReadmeWidget({ owner, repo, link, buttonLabel = 'View README', buttonClassName = '',}: GithubReadmeWidgetProps) {
     const [isOpen, setIsOpen] = useState(false);
     const [markdown, setMarkdown] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
@@ -346,7 +349,7 @@ export function GithubReadmeWidget({ owner, repo, buttonLabel = 'View README', b
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
 
-        .replace(/```([\s\S]*?)```/g, '<pre class="bg-(--text)/30 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono text-(--blue)"><code>$1</code></pre>')
+        .replace(/```([\s\S]*?)```/g, '<pre class="bg-(--text)/20 p-4 rounded-xl border border-slate-800 my-4 overflow-x-auto text-sm font-mono text-(--tangerine)"><code>$1</code></pre>')
 
         .replace(/`([^`]+)`/g, '<code class="bg-slate-800 text-sky-300 px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
 
@@ -370,10 +373,10 @@ export function GithubReadmeWidget({ owner, repo, buttonLabel = 'View README', b
         <button
             onClick={() => setIsOpen(true)}
             className={
-                buttonClassName || 'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2'
+                buttonClassName || 'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 m-1'
             }
         >
-            <svg className="w-5 h-5 text-slate-300" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-(--text)" fill="currentColor" viewBox="0 0 24 24">
             <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
             {buttonLabel}
@@ -433,17 +436,118 @@ export function GithubReadmeWidget({ owner, repo, buttonLabel = 'View README', b
                     )}
                 </div>
 
-                <div className="px-6 py-3 border-t border-(--text)/80 bg-(--text)/80 flex justify-end">
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        className="px-4 py-2 text-sm font-medium bg-(--bgc) hover:bg-(--bgc)/50 text-(--text) rounded-xl transition-colors"
-                    >
-                    Chiudi
-                    </button>
-                </div>
+
+                <a
+                    href={`${link}`}
+                    className={
+                        'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 w-fit m-1'
+                    }
+                >
+                    <svg className="w-5 h-5 text-(--text)" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                    </svg>
+                    Link
+                </a>
                 </motion.div>
             </div>
         )}
         </AnimatePresence>
     </>);
+}
+
+interface DirectoryProjectProps {
+    repo: string;
+}
+
+interface DataResponse{
+    name : string,
+    description : string,
+    languagesAndTools : string[],
+    link: string,
+    image : string,
+}
+
+export function DirectoryProject({ repo }: DirectoryProjectProps) {
+
+    const [owner, setOwner] = useState<string | null>(null);
+    const [data, setData] = useState<DataResponse | null>(null);
+
+    useEffect(() => {
+        setOwner(projectsInfos.owner);
+        let dataP = projectsInfos.projects[repo as keyof typeof projectsInfos.projects] as DataResponse | any;
+        setData(dataP);
+    }, [repo]);
+
+    return (
+        <Container>
+            {
+                data === null || owner === null?
+                    <div className="flex justify-center items-center py-20 text-(--text)">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-(--magenta) mr-3" />
+                        Loading content...
+                    </div> :
+                    <div className="p-5">
+
+                        <h1>Project: {data.name}</h1>
+                        <p>Description: {data.description}</p>
+                        <Stikers list={data.languagesAndTools}></Stikers>
+                        <a
+                            href={`${data.link}`}
+                            className={
+                                'px-5 py-2.5 bg-(--bg) hover:bg-(--text)/20 border border-(--text) text-(--text) font-medium rounded-xl transition-all flex items-center gap-2 m-1 w-fit'
+                            }
+                        >
+                            <svg className="w-5 h-5 text-(--text)" fill="currentColor" viewBox="0 0 24 24">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                            Link
+                        </a>
+                        <GithubReadmeWidget owner={owner} repo={data.name} link={data.link}></GithubReadmeWidget>
+                    </div>
+            }
+
+
+        </Container>
+    );
+}
+
+
+
+export function Stikers({ list = [] }: { list: Array<string> }) {
+    if (!list || list.length === 0) {
+        return <div className="bg-black w-[calc(100%-0.5rem)] h-auto overflow-hidden border-2 border-(--text) rounded-xl inset-shadow-[0_0_5px_grey] filter m-1">
+            <motion.div
+                animate={{
+                    x: ['100%', '-100%'],
+                }}
+                transition={{
+                    duration: 5,
+                    ease: 'linear',
+                    repeat: Infinity,
+                }}
+                className="m-5 text-xl flex flex-row items-center italic font-extrabold text-(--blue)">
+                Caricamento...
+            </motion.div>
+        </div>;
+    }
+
+    return (
+        <div className="bg-black w-65 h-auto overflow-hidden border-2 border-(--text) rounded-xl inset-shadow-[0_0_5px_grey] filter m-1">
+            <motion.div
+                animate={{
+                    x: ['100%', '-100%'],
+                }}
+                transition={{
+                    duration: 4,
+                    ease: 'linear',
+                    repeat: Infinity,
+                }}
+                className="m-2 text-xl flex flex-row items-center italic font-extrabold text-(--blue) gap-2">
+                {
+                    list.map((word, index) => (
+                        <SushiLanguage svg={word} text="" href="" dimension={10} key={index}></SushiLanguage>
+                ))}
+            </motion.div>
+        </div>
+    );
 }

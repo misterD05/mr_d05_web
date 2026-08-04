@@ -1,19 +1,20 @@
 {
-    "projects" : [
-        {
+    "owner" : "misterD05",
+    "projects" : {
+        "mr_d05_web" : {
             "name" : "mr_d05_web",
             "description" : "My portfolio",
-            "languages&Tools" : ["Netx.js", "React", "Tailwind", "Framer Motion", "Typescript"],
-            "moreInfo": "",
+            "languagesAndTools" : ["Next.js", "React", "Tailwind", "Framer Motion", "TypeScript", "Node.js", "GitHub"],
             "link" : "https://mr-d05-web.vercel.app/",
-            "image" :  ""
+            "image" :  "portfolio.tsx"
         },
-        {
-            "name" : "",
-            "description" : "",
-            "languages&Tools" : "",
-            "image" :  ""
+        "miramer_app_smart_mirror" : {
+            "name" : "miramer_app_smart_mirror",
+            "description" : "An Electron app for homemade smart mirrors",
+            "languagesAndTools" : ["Electron", "Vite", "React", "Tailwind", "Framer Motion", "TypeScript"],
+            "link" : "https://github.com/misterD05/mirame-app-smart-mirror",
+            "image" :  "mirror.tsx"
         }
-    ]
+    }
 
 }
