@@ -32,10 +32,90 @@ export const DeveloperIcon: React.FC<IconProps> = ({
     </svg>
     );
 };
+export interface SmartMirrorSymbolProps extends React.SVGProps<SVGSVGElement> {
+    size?: number | string;
+    color?: string;
+}
+
+export const SmartMirrorSymbol: React.FC<SmartMirrorSymbolProps> = ({
+    size = 128,
+    color = 'currentColor',
+    className = '',
+    ...props
+}) => {
+    return (
+        <svg
+            width={size}
+            height={size}
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={`${className}`}
+            {...props}
+        >
+        <rect
+            x="12"
+            y="8"
+            width="76"
+            height="84"
+            rx="12"
+            stroke={color}
+            strokeWidth="6"
+        />
+
+        <line
+            x1="70"
+            y1="18"
+            x2="30"
+            y2="82"
+            stroke={color}
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray="16 12"
+            opacity="0.35"
+        />
+
+        <line
+            x1="80"
+            y1="28"
+            x2="55"
+            y2="68"
+            stroke={color}
+            strokeWidth="4"
+            strokeLinecap="round"
+            opacity="0.35"
+        />
+
+        <rect
+            x="22"
+            y="18"
+            width="20"
+            height="12"
+            rx="3"
+            stroke={color}
+            strokeWidth="4"
+        />
+
+        <circle
+            cx="72"
+            cy="74"
+            r="3"
+            fill={color}
+        />
+        <circle
+            cx="78"
+            cy="74"
+            r="3"
+            fill={color}
+        />
+    </svg>
+    );
+};
 
 
 let mapIcons = {}
 
 export default mapIcons = {
-    "portfolio" : <DeveloperIcon></DeveloperIcon>
+    "portfolio": <DeveloperIcon></DeveloperIcon>,
+    "mirror" : <SmartMirrorSymbol></SmartMirrorSymbol>
 }

@@ -222,12 +222,12 @@ export function VerticalMarquee({
         let b = "";
         for (let a of word) {
 
-            if (a == ":" || a == "X" || a == ")" || a == "D" ) {
+            if (a === ":" || a === "X" || a === ")" || a === "D") {
                 if (b == "") {
                     b = a;
                     continue;
                 }
-                letAndSpaces.push(b, a);
+                letAndSpaces.push(b + a);
                 continue;
             }
             letAndSpaces.push(a);
@@ -251,7 +251,7 @@ export function VerticalMarquee({
                 className="m-5 text-7xl flex flex-col items-center italic font-extrabold text-(--magenta)">
                 {
                     letters.map((char, index) => (
-                        <span key={index}>{char}</span>
+                        <span key={index}>{char === " " ? "\u00A0" : char}</span>
                 ))}
             </motion.div>
         </div>
@@ -482,17 +482,17 @@ export function DirectoryProject({ repo }: DirectoryProjectProps) {
     return (
         <Container>
             {
-                data === null || owner === null?
+                !data || !owner ?
                     <div className="flex justify-center items-center py-20 text-(--text)">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-(--magenta) mr-3" />
                         Loading content...
                     </div> :
-                    <div className="flex flex-row items-center">
+                    <div className="flex flex-row items-center p-3">
                         {mapIcons[data.image as keyof typeof mapIcons]}
                         <div className="p-5 flex flex-col items-start justify-center gap-4">
 
-                            <h1 className="text-2xl  flex gap-3">Project: <h1 className="font-bold text-(--mode)">{data.name}</h1></h1>
-                            <p className="text-large  flex gap-3">Description: <p className="font-bold text-(--tangerine)">{data.description}</p></p>
+                            <h1 className="text-2xl  flex gap-3">Project: <span className="font-bold text-(--mode)">{data.name}</span></h1>
+                            <p className="text-large  flex gap-3">Description: <span className="font-bold text-(--tangerine)">{data.description}</span></p>
                             <Stikers list={data.languagesAndTools}></Stikers>
                             <div className="flex flex-row items-center gap-1">
                                 <a
@@ -520,7 +520,7 @@ export function DirectoryProject({ repo }: DirectoryProjectProps) {
 
 export function Stikers({ list = [] }: { list: Array<string> }) {
     if (!list || list.length === 0) {
-        return <div className="bg-black w-[calc(100%-0.5rem)] h-auto overflow-hidden border-2 border-(--text) rounded-xl inset-shadow-[0_0_5px_grey] filter m-1">
+        return <div className="bg-white/30 w-[calc(100%-0.5rem)] h-auto overflow-hidden border-2 border-(--text) rounded-xl inset-shadow-[0_0_5px_grey] filter m-1">
             <motion.div
                 animate={{
                     x: ['100%', '-100%'],
@@ -537,7 +537,7 @@ export function Stikers({ list = [] }: { list: Array<string> }) {
     }
 
     return (
-        <div className="bg-black w-80 h-auto overflow-hidden border-2 border-(--text) rounded-xl">
+        <div className="bg-black/20 w-80 h-auto overflow-hidden border-2 border-(--text) rounded-xl">
             <motion.div
                 animate={{
                     x: ['100%', '-100%'],

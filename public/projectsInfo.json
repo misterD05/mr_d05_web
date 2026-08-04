@@ -8,12 +8,12 @@
             "link" : "https://mr-d05-web.vercel.app/",
             "image" :  "portfolio"
         },
-        "miramer_app_smart_mirror" : {
-            "name" : "miramer_app_smart_mirror",
+        "mirame-app-smart-mirror" : {
+            "name" : "mirame-app-smart-mirror",
             "description" : "An Electron app for homemade smart mirrors",
             "languagesAndTools" : ["Electron", "Vite", "React", "Tailwind", "Framer Motion", "TypeScript"],
             "link" : "https://github.com/misterD05/mirame-app-smart-mirror",
-            "image" :  "mirame"
+            "image" :  "mirror"
         }
     }
 
