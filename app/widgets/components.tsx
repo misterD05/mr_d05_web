@@ -310,6 +310,7 @@ export function GithubReadmeWidget({ owner, repo, link, buttonLabel = 'View READ
                     }
                 );
 
+
                 if (!response.ok) {
                     throw new Error(`Errore durante il recupero del README (${response.status})`);
                 }
@@ -550,7 +551,7 @@ export function Stikers({ list = [] }: { list: Array<string> }) {
                 className="m-2 text-xl flex flex-row items-center italic font-extrabold text-(--blue) gap-2">
                 {
                     list.map((word, index) => (
-                        <SushiLanguage svg={word} text="" href="" dimension={10} key={index}></SushiLanguage>
+                        <SushiLanguage svg={word} text="" href="" dimension={30} key={index}></SushiLanguage>
                 ))}
             </motion.div>
         </div>
