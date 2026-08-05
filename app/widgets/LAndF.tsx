@@ -8,7 +8,7 @@ type SushiProps = {
     text: string;
     svg: string;
     href: string;
-    dimension: number;
+    dimension?: number;
     toggle?: Function;
     state?: boolean;
 };
