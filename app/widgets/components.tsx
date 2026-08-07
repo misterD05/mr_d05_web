@@ -493,7 +493,7 @@ export function DirectoryProject({ repo }: DirectoryProjectProps) {
                         <div className="p-5 flex flex-col items-start justify-center gap-4">
 
                             <h1 className="text-2xl  flex gap-3">Project: <span className="font-bold text-(--mode)">{data.name}</span></h1>
-                            <p className="text-large  flex gap-3">Description: <span className="font-bold text-(--tangerine)">{data.description}</span></p>
+                            <p className="text-large  flex gap-3">Description: <span className="font-bold text-(--blue)">{data.description}</span></p>
                             <Stikers list={data.languagesAndTools}></Stikers>
                             <div className="flex flex-row items-center gap-1">
                                 <a

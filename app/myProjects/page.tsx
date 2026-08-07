@@ -1,4 +1,4 @@
-import {Container, ContainerHiddenColumn, DirectoryProject, GithubReadmeWidget, HorizontalArrow, VerticalMarquee}  from "../widgets/components";
+import {Container, ContainerHiddenColumn, ContainerHiddenRow, DirectoryProject, GithubReadmeWidget, HorizontalArrow, VerticalMarquee}  from "../widgets/components";
 import projectsInfos from "../../public/projectsInfo.json";
 
 interface DataResponse{
@@ -28,7 +28,7 @@ export default function MyProjects() {
       <VerticalMarquee speed={5}>Projects XD</VerticalMarquee>
       <HorizontalArrow direction="right" size={200}></HorizontalArrow>
       <main className="flex flex row items-center">
-        <ContainerHiddenColumn isCentered={true} isFitted={true}>
+        <ContainerHiddenRow isCentered={true} isFitted={true}>
           {
             listObjects.map((couple, index) => (
               <ContainerHiddenColumn isCentered={true} isFitted={true} key={index}>
@@ -39,7 +39,7 @@ export default function MyProjects() {
                 ))}
               </ContainerHiddenColumn>
           ))}
-        </ContainerHiddenColumn>
+        </ContainerHiddenRow>
 
       </main>
     </div>

@@ -17,8 +17,8 @@
         },
         "github-stats" : {
             "name" : "github-stats",
-            "description" : "Hono small server running in vercel to produce svg for github users",
-            "languagesAndTools" : ["HTML", "CSS", "JavaScript","TypeScript"],
+            "description" : "Hono service running in vercel to produce svg for github users",
+            "languagesAndTools" : ["HTML", "CSS", "JavaScript", "TypeScript"],
             "link" : "https://github.com/misterD05/github-stats",
             "image" :  "stats"
         }
