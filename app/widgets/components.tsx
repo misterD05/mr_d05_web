@@ -111,7 +111,7 @@ export function ThemeToggleButton() {
 
 export function Container({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 w-full h-full"
+        <motion.div className="rounded-[30px] border-2 bg-(--text)/10 w-full h-full shadow-custom-variabile"
             initial="rest"
             animate="rest"
             whileHover="hover"
@@ -248,7 +248,7 @@ export function VerticalMarquee({
                     ease: 'linear',
                     repeat: Infinity,
                 }}
-                className="m-5 text-7xl flex flex-col items-center italic font-extrabold text-(--magenta)">
+                className="m-5 text-7xl flex flex-col items-center italic font-extrabold text-(--magenta) [text-shadow:2px_2px_0px_var(--mode)]">
                 {
                     letters.map((char, index) => (
                         <span key={index}>{char === " " ? "\u00A0" : char}</span>

@@ -7,6 +7,7 @@
   --blue: #2323a9ff;
   --bgc: #d9d5bfff;
   --text: #150F2F;
+  --shadow: #3c18dd;
   --mode: #A333FF;
 }
 
@@ -19,6 +20,7 @@
     --blue: #8888e7ff;
     --bgc: #262417;
     --text: #eeeeee;
+    --shadow: rgb(120, 75, 255);
     --mode: #F7B538;
   }
 }
@@ -30,4 +32,10 @@ body {
 
 ::-webkit-scrollbar{
   visibility: hidden;
+}
+
+@layer utilities {
+  .shadow-custom-variabile {
+    box-shadow: 7px 8px 0px 0px var(--shadow);
+  }
 }
