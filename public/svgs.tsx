@@ -1,5 +1,5 @@
 import React from 'react';
-
+import stats from '../public/stats.svg';
 
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
@@ -112,10 +112,32 @@ export const SmartMirrorSymbol: React.FC<SmartMirrorSymbolProps> = ({
     );
 };
 
+import { SVGProps } from 'react';
+
+export const ChartColumnIcon = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}
+  >
+    <path d="M3 3v16a2 2 0 0 0 2 2h16" />
+    <path d="M18 17V9" />
+    <path d="M13 17V5" />
+    <path d="M8 17v-3" />
+  </svg>
+);
 
 let mapIcons = {}
 
 export default mapIcons = {
     "portfolio": <DeveloperIcon></DeveloperIcon>,
-    "mirror" : <SmartMirrorSymbol></SmartMirrorSymbol>
+    "mirror": <SmartMirrorSymbol></SmartMirrorSymbol>,
+    "stats": <ChartColumnIcon></ChartColumnIcon>
 }

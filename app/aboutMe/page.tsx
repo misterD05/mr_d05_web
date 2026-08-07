@@ -27,8 +27,8 @@ export default function AboutMe() {
         </div>
 
         <ContainerHiddenColumn isFitted={true}>
-        <img className="rounded-[30px] border-4 border-(--text)/60 w-250 " src="https://github-stats-dashboard-xi.vercel.app/api/hexagonalStats/misterD05/yellow"></img>
-        <img className="rounded-[30px] border-4 border-(--text)/60 w-250" src="https://github-stats-dashboard-xi.vercel.app/api/donutLanguages/misterD05"></img>
+        <img className="rounded-[30px] border-4 border-(--text)/60 w-250 " src="https://github-stats-five-pi.vercel.app/api/hexagonalStats/misterD05/amber"></img>
+        <img className="rounded-[30px] border-4 border-(--text)/60 w-250" src="https://github-stats-five-pi.vercel.app/api/donutLanguages/misterD05"></img>
       </ContainerHiddenColumn>
       </ContainerHiddenRow>
 

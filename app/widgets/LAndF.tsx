@@ -14,7 +14,7 @@ type SushiProps = {
 };
 
 export const techIcons: Record<string, string> = {
-    // --- LINGUAGGI DI PROGRAMMAZIONE ---
+    // --- Programming Languages ---
     "TypeScript": "https://cdn.simpleicons.org/typescript/3178C6",
     "JavaScript": "https://cdn.simpleicons.org/javascript/F7DF1E",
     "Python": "https://cdn.simpleicons.org/python/3776AB",

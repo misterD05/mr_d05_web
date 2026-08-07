@@ -14,6 +14,13 @@
             "languagesAndTools" : ["Electron", "Vite", "React", "Tailwind", "Framer Motion", "TypeScript"],
             "link" : "https://github.com/misterD05/mirame-app-smart-mirror",
             "image" :  "mirror"
+        },
+        "github-stats" : {
+            "name" : "github-stats",
+            "description" : "Hono small server running in vercel to produce svg for github users",
+            "languagesAndTools" : ["HTML", "CSS", "JavaScript","TypeScript"],
+            "link" : "https://github.com/misterD05/github-stats",
+            "image" :  "stats"
         }
     }
 
