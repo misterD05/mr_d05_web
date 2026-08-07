@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { MenuBar } from "./widgets/header.tsx";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 const comicNeue = localFont({
@@ -18,6 +19,7 @@ export default function RootLayout({
       </head>
       <body className={`${comicNeue.className} antialiased scrollbar-hidden h-full w-full`}>
         <MenuBar></MenuBar>
+        <Analytics></Analytics>
         <div className="w-auto h-auto z-0 flex">{children}</div>
       </body>
     </html>
